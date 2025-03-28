@@ -26,4 +26,61 @@ public class Addition
 		Assert.ThrowsException<ArgumentNullException>(() => Program.Add(null, "1"));
 		Assert.ThrowsException<ArgumentNullException>(() => Program.Add(null, null));
 	}
+
+ 	[TestMethod]
+    public void Subtract_Valid()
+    {
+        Assert.AreEqual(4, Program.Subtract("10", "5"));
+        Assert.AreEqual(0, Program.Subtract("3", "3"));
+        Assert.AreEqual(-2, Program.Subtract("5", "7"));
+    }
+
+    	[TestMethod]
+    public void Multiply_Valid()
+    {
+        Assert.AreEqual(6, Program.Multiply("2", "3"));
+        Assert.AreEqual(0, Program.Multiply("0", "5"));
+        Assert.AreEqual(-14, Program.Multiply("-2", "7"));
+    }
+
+    	[TestMethod]
+    public void Divide_Valid()
+    {
+        Assert.AreEqual(5, Program.Divide("10", "2"));
+        Assert.AreEqual(1, Program.Divide("3", "3"));
+        Assert.AreEqual(2.5, Program.Divide("5", "2"));
+    }
+
+        [TestMethod]
+    public void Power_Valid()
+    {
+        Assert.AreEqual(8, Program.Power("2", "3"));
+        Assert.AreEqual(1, Program.Power("5", "0"));
+        Assert.AreEqual(25, Program.Power("5", "2"));
+    }
+
+    	[TestMethod]
+    public void Divide_ByZero()
+    {
+        Assert.ThrowsException<DivideByZeroException>(() => Program.Divide("5", "0"));
+    }
+
+    	[TestMethod]
+    public void Invalid_Input()
+    {
+        Assert.ThrowsException<FormatException>(() => Program.Subtract("a", "5"));
+        Assert.ThrowsException<FormatException>(() => Program.Multiply("1", "b"));
+        Assert.ThrowsException<FormatException>(() => Program.Divide("c", "3"));
+        Assert.ThrowsException<FormatException>(() => Program.Power("d", "2"));
+    }
+
+    	[TestMethod]
+    public void Null_Input()
+    {
+        Assert.ThrowsException<ArgumentNullException>(() => Program.Subtract(null, "5"));
+        Assert.ThrowsException<ArgumentNullException>(() => Program.Multiply("1", null));
+        Assert.ThrowsException<ArgumentNullException>(() => Program.Divide(null, "3"));
+        Assert.ThrowsException<ArgumentNullException>(() => Program.Power("2", null));
+    }
+}
 }
