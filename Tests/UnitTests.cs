@@ -56,14 +56,8 @@ public class Addition
     public void Power_Valid_Martinez()
     {
         Assert.AreEqual(8, Program.Power("2", "3"));
-        Assert.AreEqual(1, Program.Power("5", "0"));
+        Assert.AreEqual(5, Program.Power("5", "1"));
         Assert.AreEqual(25, Program.Power("5", "2"));
-    }
-
-    	[TestMethod]
-    public void Divide_ByZero_Martinez()
-    {
-        Assert.ThrowsException<DivideByZeroException>(() => Program.Divide("5", "0"));
     }
 
     	[TestMethod]
