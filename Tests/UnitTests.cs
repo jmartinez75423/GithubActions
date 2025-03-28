@@ -30,7 +30,7 @@ public class Addition
  	[TestMethod]
     public void Subtract_Valid()
     {
-        Assert.AreEqual(4, Program.Subtract("10", "5"));
+        Assert.AreEqual(5, Program.Subtract("10", "5"));
         Assert.AreEqual(0, Program.Subtract("3", "3"));
         Assert.AreEqual(-2, Program.Subtract("5", "7"));
     }
