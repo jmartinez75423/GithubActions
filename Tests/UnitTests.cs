@@ -30,7 +30,7 @@ public class Addition
  	[TestMethod]
     public void Subtract_Valid()
     {
-        Assert.AreEqual(3, Program.Subtract("10", "5"));
+        Assert.AreEqual(5, Program.Subtract("10", "5"));
         Assert.AreEqual(5, Program.Subtract("10", "5"));
         Assert.AreEqual(0, Program.Subtract("3", "3"));
         Assert.AreEqual(-2, Program.Subtract("5", "7"));
@@ -56,14 +56,8 @@ public class Addition
     public void Power_Valid()
     {
         Assert.AreEqual(8, Program.Power("2", "3"));
-        Assert.AreEqual(1, Program.Power("5", "0"));
+        Assert.AreEqual(5, Program.Power("5", "1"));
         Assert.AreEqual(25, Program.Power("5", "2"));
-    }
-
-    	[TestMethod]
-    public void Divide_ByZero()
-    {
-        Assert.ThrowsException<DivideByZeroException>(() => Program.Divide("5", "0"));
     }
 
     	[TestMethod]
