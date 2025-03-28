@@ -83,4 +83,3 @@ public class Addition
         Assert.ThrowsException<ArgumentNullException>(() => Program.Power("2", null));
     }
 }
-}
